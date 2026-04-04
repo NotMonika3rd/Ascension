@@ -11,6 +11,8 @@
     "screenshots": [],
     "useDependencyInformation": true,
     "requiredMods": [],
-    "dependencies": []
+    "dependencies": [
+      "baubles"
+    ]
   }
 ]
