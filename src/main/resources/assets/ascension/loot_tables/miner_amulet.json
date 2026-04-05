@@ -47,15 +47,6 @@
               "count": 3
             }
           ]
-        },{
-          "type": "item",
-          "name": "minecraft:prismarine_crystals",
-          "functions": [
-            {
-              "function": "set_count",
-              "count": 3
-            }
-          ]
         }
       ]
     }

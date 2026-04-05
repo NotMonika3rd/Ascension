@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "ascension:roh"
+    "layer0": "ascension:soul_ring"
   }
 }

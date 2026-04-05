@@ -8,6 +8,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -33,12 +34,11 @@ public class ItemUtils {
     }
 
     @SubscribeEvent
-    public static void regItems(RegistryEvent.Register<Item> e) throws ClassNotFoundException {
-        //Class.forName("rip.sayori.ascension.items.ModItems");
+    public static void regItems(RegistryEvent.Register<Item> e) {
         creativeTab = new CreativeTabs("ascension") {
             @Override
             public ItemStack createIcon() {
-                return ModItems.soulGem.getDefaultInstance();
+                return ModItems.bookOfBeyond.getDefaultInstance();
             }
         };
         for(var i : items) i.setCreativeTab(creativeTab);
@@ -49,5 +49,10 @@ public class ItemUtils {
     @SideOnly(Side.CLIENT)
     public static void onModelReg(ModelRegistryEvent event) {
         for(var i : items) ModelLoader.setCustomModelResourceLocation(i, 0, new ModelResourceLocation(Objects.requireNonNull(i.getRegistryName()), "inventory"));
+    }
+
+    public static ItemStack compoundSafe(ItemStack item){
+        if(!item.hasTagCompound()) item.setTagCompound(new NBTTagCompound());
+        return item;
     }
 }

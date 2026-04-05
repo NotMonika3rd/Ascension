@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "ascension:sg"
+    "layer0": "ascension:blacksmiths_amulet"
   }
 }

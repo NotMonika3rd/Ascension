@@ -1,6 +1,11 @@
 itemGroup.ascension=飞升
 
-item.ascension.soul_gem.name=灵魂晶石
 item.ascension.book_of_beyond.name=超越之书
-item.ascension.ring_of_honor.name=荣耀之戒
+item.ascension.soul_ring.name=灵魂之戒
 item.ascension.miner_amulet.name=矿工护符
+item.ascension.blacksmiths_amulet.name=锻造者护符
+
+ascension.tooltip.miner_amulet=\n挖掘方块时 50%% 概率获得额外的矿石。\n
+ascension.tooltip.book_of_beyond=\n在铁砧上与有附魔的物品一同锻造，将物品所有附魔提升一级。\n具有高昂的经验花费。\n
+ascension.tooltip.soul_ring=\n每击杀一个生物，为你带来 1%% 攻击伤害加成。\n累计击杀: %1$s\n
+ascension.tooltip.blacksmiths_amulet=\n减少 10%% 铁砧经验使用，并将铁砧最大经验使用限制在 30 级。\n

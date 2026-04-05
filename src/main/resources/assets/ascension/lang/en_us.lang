@@ -1,6 +1,11 @@
 itemGroup.ascension=Ascension
 
-item.ascension.soul_gem.name=Soul Gem
 item.ascension.book_of_beyond.name=Book Of Beyond
-item.ascension.ring_of_honor.name=Ring Of Honor
+item.ascension.soul_ring.name=Soul Ring
 item.ascension.miner_amulet.name=Miner Amulet
+item.ascension.blacksmiths_amulet.name=Blacksmith Amulet
+
+ascension.tooltip.miner_amulet=\nWhen mining blocks, there is a 50%% chance to obtain additional ores.\n
+ascension.tooltip.book_of_beyond=\nForging on an anvil with enchanted items will upgrade all enchantments on the items by one level.\nIt incurs a high cost in experience points.\n
+ascension.tooltip.soul_ring=\nFor every creature you kill, you gain a 1%% attack damage bonus.\nCumulative kills: %1$s\n
+ascension.tooltip.blacksmiths_amulet=\nReduce the experience usage of the anvil by 10%% and limit the maximum experience usage of the anvil to level 30\n

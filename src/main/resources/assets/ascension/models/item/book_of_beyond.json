@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "ascension:bob"
+    "layer0": "ascension:book_of_beyond"
   }
 }
