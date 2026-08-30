@@ -4,6 +4,7 @@ item.ascension.book_of_beyond.name=超越之书
 item.ascension.soul_ring.name=灵魂之戒
 item.ascension.miner_amulet.name=矿工护符
 item.ascension.blacksmiths_amulet.name=锻造者护符
+item.ascension.piece_of_bedrock.name=基岩碎块
 
 ascension.tooltip.miner_amulet=\n挖掘方块时 50%% 概率获得额外的矿石。\n
 ascension.tooltip.book_of_beyond=\n在铁砧上与有附魔的物品一同锻造，将物品所有附魔提升一级。\n具有高昂的经验花费。\n

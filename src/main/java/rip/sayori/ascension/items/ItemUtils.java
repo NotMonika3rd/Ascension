@@ -2,10 +2,6 @@ package rip.sayori.ascension.items;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnumEnchantmentType;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -27,7 +23,7 @@ public class ItemUtils {
 
     public static CreativeTabs creativeTab;
 
-    public static Item newItem(Item base, String name){
+    public static Item newItem(Item base, String name) {
         Item item = base.setRegistryName("ascension", name).setTranslationKey("ascension." + name);
         items.add(item);
         return item;
@@ -41,18 +37,19 @@ public class ItemUtils {
                 return ModItems.bookOfBeyond.getDefaultInstance();
             }
         };
-        for(var i : items) i.setCreativeTab(creativeTab);
+        for (var i : items) i.setCreativeTab(creativeTab);
         items.forEach(e.getRegistry()::register);
     }
 
     @SubscribeEvent
     @SideOnly(Side.CLIENT)
     public static void onModelReg(ModelRegistryEvent event) {
-        for(var i : items) ModelLoader.setCustomModelResourceLocation(i, 0, new ModelResourceLocation(Objects.requireNonNull(i.getRegistryName()), "inventory"));
+        for (var i : items)
+            ModelLoader.setCustomModelResourceLocation(i, 0, new ModelResourceLocation(Objects.requireNonNull(i.getRegistryName()), "inventory"));
     }
 
-    public static ItemStack compoundSafe(ItemStack item){
-        if(!item.hasTagCompound()) item.setTagCompound(new NBTTagCompound());
+    public static ItemStack compoundSafe(ItemStack item) {
+        if (!item.hasTagCompound()) item.setTagCompound(new NBTTagCompound());
         return item;
     }
 }

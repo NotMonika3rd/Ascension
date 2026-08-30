@@ -26,8 +26,20 @@ import java.util.UUID;
 import static rip.sayori.ascension.items.ItemUtils.compoundSafe;
 
 @Mod.EventBusSubscriber
-public class SoulRing extends BaubleItemBase{
+public class SoulRing extends BaubleItemBase {
     public static final UUID ATTR_ID = UUID.fromString("2b59991f-5cff-488b-b22d-674a0ac30145");
+
+    @SubscribeEvent
+    public static void onEntityDeath(LivingDeathEvent event) {
+        Entity source = event.getSource().getTrueSource();
+        if (source instanceof EntityLivingBase living && BaublesApi.getBaublesHandler(living) instanceof BaublesContainer container) {
+            int index = BaublesApi.getIndexInBaubles(living, ModItems.soulRing, 0);
+            if (index != -1) {
+                var tagCompound = compoundSafe(container.getStackInSlot(index)).getTagCompound();
+                tagCompound.setLong("kills", tagCompound.getLong("kills") + 1);
+            }
+        }
+    }
 
     @Override
     public List<BaubleTypeEx> getTypes(ItemStack itemStack) {
@@ -42,17 +54,5 @@ public class SoulRing extends BaubleItemBase{
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         tooltip.addAll(1, List.of(I18n.format("ascension.tooltip.soul_ring", compoundSafe(stack).getTagCompound().getLong("kills")).split("\\\\n")));
-    }
-
-    @SubscribeEvent
-    public static void onEntityDeath(LivingDeathEvent event){
-        Entity source = event.getSource().getTrueSource();
-        if (source instanceof EntityLivingBase living && BaublesApi.getBaublesHandler(living) instanceof BaublesContainer container) {
-            int index = BaublesApi.getIndexInBaubles(living, ModItems.soulRing, 0);
-            if (index != -1) {
-                var tagCompound = compoundSafe(container.getStackInSlot(index)).getTagCompound();
-                tagCompound.setLong("kills", tagCompound.getLong("kills") + 1);
-            }
-        }
     }
 }

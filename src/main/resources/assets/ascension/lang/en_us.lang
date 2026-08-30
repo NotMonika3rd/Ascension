@@ -4,6 +4,7 @@ item.ascension.book_of_beyond.name=Book Of Beyond
 item.ascension.soul_ring.name=Soul Ring
 item.ascension.miner_amulet.name=Miner Amulet
 item.ascension.blacksmiths_amulet.name=Blacksmith Amulet
+item.ascension.piece_of_bedrock.name=Piece of Bedrock
 
 ascension.tooltip.miner_amulet=\nWhen mining blocks, there is a 50%% chance to obtain additional ores.\n
 ascension.tooltip.book_of_beyond=\nForging on an anvil with enchanted items will upgrade all enchantments on the items by one level.\nIt incurs a high cost in experience points.\n

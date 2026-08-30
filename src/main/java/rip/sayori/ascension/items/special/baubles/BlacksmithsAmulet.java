@@ -18,7 +18,13 @@ import rip.sayori.ascension.items.ModItems;
 import java.util.List;
 
 @Mod.EventBusSubscriber
-public class BlacksmithsAmulet extends BaubleItemBase{
+public class BlacksmithsAmulet extends BaubleItemBase {
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public static void onAnvil(AnvilUpdateEvent e) {
+        if (BaublesApi.isBaubleEquipped((EntityLivingBase) e.getPlayer(), ModItems.blacksmithsAmulet))
+            e.setCost(Math.min((int) Math.ceil(e.getCost() * 0.9), 30));
+    }
+
     @Override
     public List<BaubleTypeEx> getTypes(ItemStack itemStack) {
         return List.of(BaubleType.AMULET.getExpansion(), BaubleType.CHARM.getExpansion());
@@ -27,11 +33,5 @@ public class BlacksmithsAmulet extends BaubleItemBase{
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         tooltip.addAll(1, List.of(I18n.format("ascension.tooltip.blacksmiths_amulet").split("\\\\n")));
-    }
-
-    @SubscribeEvent(priority = EventPriority.LOWEST)
-    public static void onAnvil(AnvilUpdateEvent e){
-        if(BaublesApi.isBaubleEquipped((EntityLivingBase) e.getPlayer(), ModItems.blacksmithsAmulet))
-            e.setCost(Math.min((int) Math.ceil(e.getCost() * 0.9), 30));
     }
 }

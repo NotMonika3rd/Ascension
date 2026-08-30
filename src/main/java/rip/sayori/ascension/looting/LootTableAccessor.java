@@ -12,19 +12,21 @@ import java.util.List;
 
 @Mod.EventBusSubscriber
 public record LootTableAccessor(String name) {
-    public ResourceLocation getLocation(){
-        return new ResourceLocation("ascension", name);
-    }
-    public List<ItemStack> get(EntityPlayer player){
-        WorldServer world = (WorldServer) player.world;
-        return world.getLootTableManager().getLootTableFromLocation(getLocation()).generateLootForPools(world.rand, new LootContext.Builder(world).withPlayer(player).build());
-    }
-
     public static List<LootTableAccessor> accessors = new ArrayList<>();
-    public static LootTableAccessor newAccessor(String name){
+
+    public static LootTableAccessor newAccessor(String name) {
         var res = new LootTableAccessor(name);
         accessors.add(res);
         return res;
+    }
+
+    public ResourceLocation getLocation() {
+        return new ResourceLocation("ascension", name);
+    }
+
+    public List<ItemStack> get(EntityPlayer player) {
+        WorldServer world = (WorldServer) player.world;
+        return world.getLootTableManager().getLootTableFromLocation(getLocation()).generateLootForPools(world.rand, new LootContext.Builder(world).withPlayer(player).build());
     }
 
 }

@@ -11,7 +11,8 @@ import static rip.sayori.ascension.items.ItemUtils.newItem;
 @SuppressWarnings("unused")
 public class ModItems {
     public static final Item bookOfBeyond = newItem(new BookOfBeyond(), "book_of_beyond");
-    public static final Item minerAmulet = newItem(new MinerAmulet(),"miner_amulet");
-    public static final Item blacksmithsAmulet = newItem(new BlacksmithsAmulet(),"blacksmiths_amulet");
-    public static final Item soulRing = newItem(new SoulRing(),"soul_ring");
+    public static final Item minerAmulet = newItem(new MinerAmulet(), "miner_amulet");
+    public static final Item blacksmithsAmulet = newItem(new BlacksmithsAmulet(), "blacksmiths_amulet");
+    public static final Item soulRing = newItem(new SoulRing(), "soul_ring");
+    public static final Item pieceOfBedrock = newItem(new Item(), "piece_of_bedrock");
 }

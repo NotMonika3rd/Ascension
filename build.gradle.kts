@@ -1,6 +1,6 @@
 plugins {
     id("java")
-    id("xyz.wagyourtail.unimined") version "1.4.16-kappa"
+    id("xyz.wagyourtail.unimined") version "1.4.36-kappa"
 }
 
 group = "rip.sayori"
@@ -12,7 +12,7 @@ unimined.minecraft {
     mappings.mcp("stable", "39-1.12")
 
     cleanroom {
-        loader("0.5.6-alpha")
+        loader("0.6.12-alpha")
     }
 }
 repositories {
@@ -21,9 +21,5 @@ repositories {
 }
 
 dependencies {
-    "modImplementation"("curse.maven:BaublesEX-1096600:7803926")
-}
-
-tasks.test {
-    useJUnitPlatform()
+    "modImplementation"("curse.maven:BaublesEX-1096600:8500331")
 }

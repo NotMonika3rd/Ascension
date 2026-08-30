@@ -18,10 +18,17 @@ import rip.sayori.ascension.looting.LootTables;
 
 import java.util.List;
 
-import static rip.sayori.ascension.items.ItemUtils.compoundSafe;
-
 @Mod.EventBusSubscriber
-public class MinerAmulet extends BaubleItemBase{
+public class MinerAmulet extends BaubleItemBase {
+    @SubscribeEvent
+    public static void onBlockBreak(BlockEvent.BreakEvent e) {
+        if (BaublesApi.isBaubleEquipped((EntityLivingBase) e.getPlayer(), ModItems.minerAmulet)) {
+            for (var i : LootTables.miner_amulet.get(e.getPlayer())) {
+                e.getWorld().spawnEntity(new EntityItem(e.getWorld(), e.getPos().getX(), e.getPos().getY(), e.getPos().getZ(), i));
+            }
+        }
+    }
+
     @Override
     public List<BaubleTypeEx> getTypes(ItemStack itemStack) {
         return List.of(BaubleType.AMULET.getExpansion());
@@ -30,14 +37,5 @@ public class MinerAmulet extends BaubleItemBase{
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         tooltip.addAll(1, List.of(I18n.format("ascension.tooltip.miner_amulet").split("\\\\n")));
-    }
-
-    @SubscribeEvent
-    public static void onBlockBreak(BlockEvent.BreakEvent e){
-        if(BaublesApi.isBaubleEquipped((EntityLivingBase) e.getPlayer(), ModItems.minerAmulet)){
-            for(var i : LootTables.miner_amulet.get(e.getPlayer())){
-                e.getWorld().spawnEntity(new EntityItem(e.getWorld(), e.getPos().getX(), e.getPos().getY(), e.getPos().getZ(), i));
-            }
-        }
     }
 }
