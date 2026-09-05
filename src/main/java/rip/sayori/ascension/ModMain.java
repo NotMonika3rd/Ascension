@@ -1,7 +1,6 @@
 package rip.sayori.ascension;
 
 import net.minecraft.world.storage.loot.LootTableList;
-import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
