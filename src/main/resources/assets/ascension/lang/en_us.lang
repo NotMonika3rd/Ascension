@@ -6,9 +6,12 @@ item.ascension.miner_amulet.name=Miner Amulet
 item.ascension.blacksmiths_amulet.name=Blacksmith Amulet
 item.ascension.piece_of_bedrock.name=Piece of Bedrock
 item.ascension.totem_of_samsara.name=Totem Of Samsara
+item.ascension.the_charm_of_curses.name=The Charm Of Curses
 
 ascension.tooltip.miner_amulet=\nWhen mining blocks, there is a 50%% chance to obtain additional ores.\n
 ascension.tooltip.book_of_beyond=\nForging on an anvil with enchanted items will upgrade all enchantments on the items by one level.\nIt incurs a high cost in experience points.\n
 ascension.tooltip.soul_ring=\nFor every creature you kill, you gain a 1%% attack damage bonus.\nCumulative kills: %1$s\n
 ascension.tooltip.blacksmiths_amulet=\nReduce the experience usage of the anvil by 10%% and limit the maximum experience usage of the anvil to level 30\n
 ascension.tooltip.totem_of_samsara=\nEach death increases your evasion rate by 1%%. Maximum 80%%.\nCumulative deaths: %1$s\n
+ascension.tooltip.the_charm_of_curses.0=§cContent with mediocrity？\n
+ascension.tooltip.the_charm_of_curses.1=§cCurses follows you.......\n

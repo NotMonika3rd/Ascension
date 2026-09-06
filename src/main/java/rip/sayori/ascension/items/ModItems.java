@@ -2,10 +2,7 @@ package rip.sayori.ascension.items;
 
 import net.minecraft.item.Item;
 import rip.sayori.ascension.items.special.BookOfBeyond;
-import rip.sayori.ascension.items.special.baubles.BlacksmithsAmulet;
-import rip.sayori.ascension.items.special.baubles.MinerAmulet;
-import rip.sayori.ascension.items.special.baubles.SoulRing;
-import rip.sayori.ascension.items.special.baubles.TotemOfSamsara;
+import rip.sayori.ascension.items.special.baubles.*;
 
 import static rip.sayori.ascension.items.ItemUtils.newItem;
 
@@ -17,4 +14,5 @@ public class ModItems {
     public static final Item soulRing = newItem(new SoulRing(), "soul_ring");
     public static final Item pieceOfBedrock = newItem(new Item(), "piece_of_bedrock");
     public static final Item totemOfSamsara = newItem(new TotemOfSamsara(), "totem_of_samsara");
+    public static final Item theCharmOfCurses = newItem(new TheCharmOfCurses(), "the_charm_of_curses");
 }

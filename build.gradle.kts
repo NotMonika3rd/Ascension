@@ -25,7 +25,7 @@ repositories {
 }
 
 dependencies {
-    "modImplementation"("curse.maven:BaublesEX-1096600:8500331")
+    "modImplementation"("curse.maven:BaublesEX-1096600:8769637")
 }
 
 idea {
